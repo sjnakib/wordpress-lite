@@ -28,14 +28,14 @@ services:
       - wpnet
 
   db:
-    image: mariadb:10.11-alpine  # ✅ THIS IS CORRECT
+    image: bitnami/mariadb:10.11
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: wpdb
-      MYSQL_USER: wpuser
-      MYSQL_PASSWORD: secretpassword
+      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_DATABASE: wpdb
+      MARIADB_USER: wpuser
+      MARIADB_PASSWORD: secretpassword
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/bitnami/mariadb
     networks:
       - wpnet
 
