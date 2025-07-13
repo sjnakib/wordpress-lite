@@ -28,7 +28,7 @@ services:
       - wpnet
 
   db:
-    image: mariadb:10.6-alpine
+    image: mariadb:10.11.6-alpine
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: wpdb
@@ -38,6 +38,7 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - wpnet
+
 
   # redis:
   #   image: redis:alpine
